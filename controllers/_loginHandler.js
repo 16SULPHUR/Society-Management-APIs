@@ -1,8 +1,5 @@
 const bcrypt = require("bcryptjs");
 const user = require("../models/User");
-const cors = require("cors");
-
-router.use(cors());
 
 async function signinHandler(req, res) {
   const body = req.body;
