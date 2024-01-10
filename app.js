@@ -26,9 +26,11 @@ app.use(bodyParser.json());
 
 const loginRoute = require("./routes/login");
 const allEventsRouter = require("./routes/events");
+const allNoticesRouter = require("./routes/notices");
 
 app.use("/login", loginRoute);
 app.use("/allEvents", allEventsRouter);
+app.use("/allNotices", allNoticesRouter);
 
 app.get("/", (req, res) => {
   res.send("Hello World!");
