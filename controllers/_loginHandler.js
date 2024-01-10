@@ -1,5 +1,5 @@
 const bcrypt = require("bcryptjs");
-const user = require("../models/User")
+const user = require("../models/User");
 
 async function signinHandler(req, res) {
   const body = req.body;
