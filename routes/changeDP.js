@@ -1,7 +1,9 @@
 const express = require('express');
 const user = require('../models/User');
-const maintenance = require('../models/Maintenance');
 const uploadImage = require('../controllers/_uploadImage');
+const multer = require("multer");
+const path = require("path");
+const fs = require("fs");
 const router = express.Router();
 
 // Set up storage for multer
