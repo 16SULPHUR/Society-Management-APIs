@@ -18,6 +18,7 @@ const storage = multer.diskStorage({
 
 router.post('/', upload.single('image'), (req, res) => {
   const imageUrl = uploadImage(req.file)
+  res.setHeader("Access-Control-Allow-Origin", "*" )
   res.json({"imageUrl":imageUrl})
 })
 
