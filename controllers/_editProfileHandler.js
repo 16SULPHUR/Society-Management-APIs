@@ -2,13 +2,6 @@ var fs = require("fs");
 var path = require("path");
 const User = require("../models/User");
 const uploadImage = require("./_uploadImage");
-const cors = require("cors")
-
-app.use(cors({
-  origin: '*',
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  credentials: true,
-}));
 
 async function _editProfileHandler(req, res) {
   const body = req.body;
