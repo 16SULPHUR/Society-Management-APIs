@@ -13,7 +13,7 @@ async function _editProfileHandler(req, res) {
   try {
     const user = await User.findById({ _id: body.id });
 
-    if (image) {
+    if (req.file.buffer) {
         const cdnUrl = await uploadToCloudStorage(buffer, originalname);
       user.dp = cdnUrl;
     }
