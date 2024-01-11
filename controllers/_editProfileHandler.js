@@ -44,7 +44,6 @@ async function _editProfileHandler(req, res) {
     console.log(updatedUser)
     // res.header("Access-Control-Allow-Origin", "*")
     // res.setHeader( "Access-Control-Allow-Origin", "*" );
-    // res.header( "Access-Control-Allow-Methods", "OPTIONS,POST,GET,PATCH")
     res.json(updatedUser);
   } catch (e) {
     console.log(e);
