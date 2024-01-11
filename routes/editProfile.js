@@ -17,12 +17,12 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage });
 
-router.post("/", upload.single('image'), async (req, res) => {
-  res.json({"msg":"HELLO SHUBHANSHU"})
-});
 // router.post("/", upload.single('image'), async (req, res) => {
-//   console.log("POST TO UPDATE PROFILE");
-//   _editProfileHandler(req, res);
+//   res.json({"msg":"HELLO SHUBHANSHU"})
 // });
+router.post("/", upload.single('image'), async (req, res) => {
+  console.log("POST TO UPDATE PROFILE");
+  _editProfileHandler(req, res);
+});
 
 module.exports = router;
