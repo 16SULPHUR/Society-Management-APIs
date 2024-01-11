@@ -42,8 +42,8 @@ async function _editProfileHandler(req, res) {
 
     const updatedUser = await User.findById({ _id: body.id });
     console.log(updatedUser)
-    res.header("Access-Control-Allow-Origin", "*")
-    res.header( "Access-Control-Allow-Methods", "OPTIONS,POST,GET,PATCH")
+    // res.header("Access-Control-Allow-Origin", "*")
+    // res.header( "Access-Control-Allow-Methods", "OPTIONS,POST,GET,PATCH")
     res.json(updatedUser);
   } catch (e) {
     console.log(e);
