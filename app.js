@@ -36,12 +36,14 @@ const allEventsRouter = require("./routes/events");
 const allNoticesRouter = require("./routes/notices");
 const editProfileRouter = require("./routes/editProfile");
 const signupRouter = require("./routes/signup");
+const changeDPRouter = require("./routes/changeDP");
 
 app.use("/login", loginRoute);
 app.use("/allEvents", allEventsRouter);
 app.use("/allNotices", allNoticesRouter);
 app.use("/editProfile", editProfileRouter);
 app.use("/signup", signupRouter);
+app.use("/changeDP", changeDPRouter);
 
 app.get("/", (req, res) => {
   res.send("Hello World!");
