@@ -13,7 +13,9 @@ const port = 6969;
 //   })
 // );
 
-app.use(cors())
+app.use(cors({
+  origin:"http://127.0.0.1:5500"
+}))
 
 const DB =
   "mongodb+srv://akpatil51340:%40Ankit2005@cluster0.rwylpqs.mongodb.net/SentosaEnclaveDataBase?retryWrites=true&w=majority";
