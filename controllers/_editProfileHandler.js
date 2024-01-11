@@ -7,14 +7,14 @@ async function _editProfileHandler(req, res) {
   const body = req.body;
   const image = req.file;
 
-  const { buffer, originalname } = req.file;
-  console.log(body)
+  console.log(body);
 
   try {
     const user = await User.findById({ _id: body.id });
 
-    if (req.file.buffer) {
-        const cdnUrl = await uploadToCloudStorage(buffer, originalname);
+    if (req.file) {
+      const { buffer, originalname } = req.file;
+      const cdnUrl = await uploadToCloudStorage(buffer, originalname);
       user.dp = cdnUrl;
     }
 
@@ -42,7 +42,7 @@ async function _editProfileHandler(req, res) {
     // console.log(savedUser);
 
     const updatedUser = await User.findById({ _id: body.id });
-    console.log(updatedUser)
+    console.log(updatedUser);
     // res.header("Access-Control-Allow-Origin", "*")
     // res.setHeader( "Access-Control-Allow-Origin", "*" );
     res.json(updatedUser);
