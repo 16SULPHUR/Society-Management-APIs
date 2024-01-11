@@ -14,15 +14,12 @@ async function uploadImage(image) {
   return uploadedImageToCloudStorage;
 }
 
-async function uploadToCloudStorage(imagePath) {
-  const { uploadFile } = await import("@uploadcare/upload-client");
-  const { readFileSync } = await import("fs");
-
-  const data = readFileSync(imagePath);
-  const file = await uploadFile(data, {
+async function uploadToCloudStorage(fileBuffer, fileName) {
+    const { uploadFile } = await import("@uploadcare/upload-client");
+  const file = await uploadFile(fileBuffer, {
     publicKey: "9eaeb2ea2031be2f1d7c",
-    fileName: imagePath,
-    contentType: "image/jpeg",
+    fileName: fileName,
+    contentType: "image/jpeg", // Adjust the content type based on your file type
   });
 
   console.log(file.cdnUrl);
@@ -39,4 +36,4 @@ function deleteLocalImage(imagePath) {
   });
 }
 
-module.exports = uploadImage;
+module.exports = uploadToCloudStorage;

@@ -1,20 +1,21 @@
 var fs = require("fs");
 var path = require("path");
 const User = require("../models/User");
-const uploadImage = require("./_uploadImage");
+const uploadToCloudStorage = require("./_uploadImage");
 
 async function _editProfileHandler(req, res) {
   const body = req.body;
   const image = req.file;
 
+  const { buffer, originalname } = req.file;
   console.log(body)
 
   try {
     const user = await User.findById({ _id: body.id });
 
     if (image) {
-      var profilePhotoUrl = await uploadImage(image);
-      user.dp = profilePhotoUrl;
+        const cdnUrl = await uploadToCloudStorage(buffer, originalname);
+      user.dp = cdnUrl;
     }
 
     if (!user) {
