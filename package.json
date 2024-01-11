@@ -2,6 +2,7 @@
   "name": "society-management-apis",
   "version": "1.0.0",
   "description": "",
+  "proxy":"https://smsapis.vercel.app/editProfile",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
