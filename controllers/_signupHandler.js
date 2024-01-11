@@ -14,6 +14,7 @@ async function signupHandler(req, res, user, maintenance) {
       email: body.email,
       password: hashedPassword,
       isAdmin: body.isAdmin,
+      name:"",
       dp:""
     });
 

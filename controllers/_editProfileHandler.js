@@ -7,6 +7,8 @@ async function _editProfileHandler(req, res) {
   const body = req.body;
   const image = req.file;
 
+  console.log(body)
+
   try {
     const user = await User.findById({ _id: body.id });
 
