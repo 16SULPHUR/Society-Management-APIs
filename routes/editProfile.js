@@ -18,7 +18,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 router.post("/", upload.single('image'), async (req, res) => {
-  res.send("HELLO SHUBHANSHU")
+  res.json("HELLO SHUBHANSHU")
 });
 // router.post("/", upload.single('image'), async (req, res) => {
 //   console.log("POST TO UPDATE PROFILE");
