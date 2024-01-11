@@ -18,8 +18,8 @@ const storage = multer.diskStorage({
   
   const upload = multer({ storage: storage });
 
-router.post('/', upload.single('image'), (req, res) => {
-  const imageUrl = uploadImage(req.file)
+router.post('/', upload.single('image'), async (req, res) => {
+  const imageUrl = await uploadImage(req.file)
   res.setHeader("Access-Control-Allow-Origin", "*" )
   res.json({"imageUrl":imageUrl})
 })
