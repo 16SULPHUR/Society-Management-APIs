@@ -42,6 +42,8 @@ const editNoticeRouter = require("./routes/editNotice");
 const galleryRouter = require("./routes/gallery");
 const addNoticeRouter = require("./routes/addNotice");
 const addEventRouter = require("./routes/addEvent");
+const deleteEventRouter = require("./routes/deleteEvent");
+const deleteNoticeRouter = require("./routes/deleteNotice");
 
 app.use("/login", loginRoute);
 app.use("/allEvents", allEventsRouter);
@@ -54,6 +56,8 @@ app.use("/editNotice", editNoticeRouter);
 app.use("/gallery", galleryRouter);
 app.use("/addNotice", addNoticeRouter);
 app.use("/addEvent", addEventRouter);
+app.use("/deleteEvent", deleteEventRouter);
+app.use("/deleteNotice", deleteNoticeRouter);
 
 app.get("/", (req, res) => {
   res.send("Hello World!");
