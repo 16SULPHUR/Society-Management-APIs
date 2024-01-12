@@ -38,6 +38,7 @@ const editProfileRouter = require("./routes/editProfile");
 const signupRouter = require("./routes/signup");
 const changeDPRouter = require("./routes/changeDP");
 const editEventRouter = require("./routes/editEvent");
+const editNoticeRouter = require("./routes/editNotice");
 const galleryRouter = require("./routes/gallery");
 
 app.use("/login", loginRoute);
@@ -47,6 +48,7 @@ app.use("/editProfile", editProfileRouter);
 app.use("/signup", signupRouter);
 app.use("/changeDP", changeDPRouter);
 app.use("/editEvent", editEventRouter);
+app.use("/editNotice", editNoticeRouter);
 app.use("/gallery", galleryRouter);
 
 app.get("/", (req, res) => {
