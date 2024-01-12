@@ -1,9 +1,9 @@
 const express = require("express");
-const _addNoticeHandler = require('../controllers/_addNoticeHandler')
+const addEventHandler = require('../controllers/addEventHandler')
 const router = express.Router();
 
 router.post("/", async (req, res) => {
-    _addNoticeHandler(req,res)
+    addEventHandler(req,res)
 });
 
 module.exports = router;

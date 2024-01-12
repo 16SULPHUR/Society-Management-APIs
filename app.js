@@ -40,6 +40,8 @@ const changeDPRouter = require("./routes/changeDP");
 const editEventRouter = require("./routes/editEvent");
 const editNoticeRouter = require("./routes/editNotice");
 const galleryRouter = require("./routes/gallery");
+const addNoticeRouter = require("./routes/addNotice");
+const addEventRouter = require("./routes/addEvent");
 
 app.use("/login", loginRoute);
 app.use("/allEvents", allEventsRouter);
@@ -50,6 +52,8 @@ app.use("/changeDP", changeDPRouter);
 app.use("/editEvent", editEventRouter);
 app.use("/editNotice", editNoticeRouter);
 app.use("/gallery", galleryRouter);
+app.use("/addNotice", addNoticeRouter);
+app.use("/addEvent", addEventRouter);
 
 app.get("/", (req, res) => {
   res.send("Hello World!");

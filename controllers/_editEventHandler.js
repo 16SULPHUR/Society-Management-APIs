@@ -13,7 +13,7 @@ async function _editEventHandler(req,res){
 
     await eventToEdit.save();
 
-    const updatedEvent = await Event.findById(body.id);
+    const updatedEvent = await Event.find();
     
     res.json(updatedEvent)
     }

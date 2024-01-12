@@ -5,19 +5,18 @@ async function _addNoticeHandler(req, res) {
     const body = req.body;
     console.log(body);
 
-    const noticeToEdit = await Notice.findById({ _id: body.id });
-    // console.log(eventToEdit)
+    const newNotice = new Notice({
+      title: body.title,
+      content: body.content
+    });
+  
+    await newNotice.save();
+  
+    const updatedNotices = await Notice.find();
 
-    noticeToEdit.title = body.title;
-    noticeToEdit.content = body.content;
-
-    await noticeToEdit.save();
-
-    const updatedNotice = await Notice.findById(body.id);
-
-    res.json(updatedNotice);
-  } catch {
-    res.send({ error: "Bhai error aa gaya. id ek bar check kar" });
+    res.json(updatedNotices);
+  } catch (e){
+    res.send({ error: "Bhai error aa gaya:  "+ e});
   }
 }
 

@@ -13,7 +13,7 @@ async function _editNoticeHandler(req, res) {
 
     await noticeToEdit.save();
 
-    const updatedNotice = await Notice.findById(body.id);
+    const updatedNotice = await Notice.find();
 
     res.json(updatedNotice);
   } catch {

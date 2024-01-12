@@ -17,19 +17,10 @@ const eventSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  createdBy: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'User', // Reference to the User model
-    required: true,
-  },
   createdAt: {
     type: Date,
     default: Date.now,
-  },
-  lastChangedBy: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'User', // Reference to the User model 
-  },
+  }
 });
 
 const Event = mongoose.model('Event', eventSchema);

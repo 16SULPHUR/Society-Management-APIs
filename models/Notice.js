@@ -15,8 +15,6 @@ const noticeSchema = new mongoose.Schema({
   },
   createdBy: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'User', // Reference to the User model
-    required: true,
   },
   lastChangedBy: {
     type: mongoose.Schema.Types.ObjectId,
