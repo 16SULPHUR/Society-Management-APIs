@@ -17,7 +17,7 @@ async function uploadImage(image) {
 async function uploadToCloudStorage(fileBuffer, fileName) {
     const { uploadFile } = await import("@uploadcare/upload-client");
   const file = await uploadFile(fileBuffer, {
-    publicKey: "9eaeb2ea2031be2f1d7c",
+    publicKey: "7b8428fa538eeb5aa051",
     fileName: fileName,
     contentType: "image/jpeg", // Adjust the content type based on your file type
   });
